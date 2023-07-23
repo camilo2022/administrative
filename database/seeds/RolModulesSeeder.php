@@ -1,0 +1,18 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\RolModule;
+
+class RolModulesSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        RolModule::create([ 'id_rol' => 1, 'id_module' => 1 ]);
+        RolModule::create([ 'id_rol' => 2, 'id_module' => 1 ]);
+    }
+}

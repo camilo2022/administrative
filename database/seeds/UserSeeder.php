@@ -1,0 +1,31 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Role;
+use Spatie\Permission\Permission;
+use App\User;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        User::create([
+            'name'    => 'SuperAdmin',
+            'email'   => 'superadmin@admin.com',
+            'password' => bcrypt('12345678'),
+            'enterprises_id' => 1,
+        ])->assignRole('superadmin');
+
+        User::create([
+            'name'    => 'Admin',
+            'email'   => 'admin@admin.com',
+            'password' => bcrypt('12345678'),
+            'enterprises_id' => 1,
+        ])->assignRole('admin');
+   }
+}

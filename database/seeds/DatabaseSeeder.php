@@ -1,5 +1,7 @@
 <?php
 
+use App\City;
+use App\Departament;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -19,9 +21,12 @@ class DatabaseSeeder extends Seeder
         $this->call(SubModuleSeeder::class);
         $this->call(UserModuleSubmoduleSeeder::class);
         $this->call(RolModulesSeeder::class);
-        //$this->call(UserEnterpriseSeeder::class);
+        $this->call(UserEnterpriseSeeder::class);
         $this->call(ModuleEnterpriseSeeder::class);
         $this->call(SubModuleEnterpriseSeeder::class);
         $this->call(RolSubModulesSeeder::class);
+        $this->call(CountrysSeeder::class);
+        $this->call(DepartamentsSeeder::class);
+        $this->call(CitysSeeder::class);
     }
 }

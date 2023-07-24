@@ -13,5 +13,7 @@ class ModuleEnterpriseSeeder extends Seeder
     public function run()
     {
         ModuleEnterprise::create([ 'modules_id' => 1, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 2, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 3, 'enterprises_id' => 1, ]);
     }
 }

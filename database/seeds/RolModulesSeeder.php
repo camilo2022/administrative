@@ -14,5 +14,7 @@ class RolModulesSeeder extends Seeder
     {
         RolModule::create([ 'id_rol' => 1, 'id_module' => 1 ]);
         RolModule::create([ 'id_rol' => 2, 'id_module' => 1 ]);
+        RolModule::create([ 'id_rol' => 1, 'id_module' => 2 ]);
+        RolModule::create([ 'id_rol' => 1, 'id_module' => 3 ]);
     }
 }

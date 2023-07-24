@@ -1,7 +1,7 @@
 <?php
 
+use App\SubModule;
 use Illuminate\Database\Seeder;
-use App\Submodule;
 
 class SubModuleSeeder extends Seeder
 {
@@ -12,40 +12,105 @@ class SubModuleSeeder extends Seeder
      */
     public function run()
     {
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Registro de usuarios",
             "id_module" => 1,
             "route" => "/Dashboard/User/Index"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Usuarios inactivos",
             "id_module" => 1,
             "route" => "/Dashboard/User/Index/Inactivos"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Roles",
             "id_module" => 1,
             "route" => "/Dashboard/Rol/Index"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Permisos",
             "id_module" => 1,
             "route" => "/Dashboard/Permission/Index"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Modulos",
             "id_module" => 1,
             "route" => "/Dashboard/Module/Index"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Sub Modulos",
             "id_module" => 1,
             "route" => "/Dashboard/SubModule/Index"
         ]);
-        Submodule::create([
+        SubModule::create([
             "name_submodules" => "Empresas",
             "id_module" => 1,
             "route" => "/Dashboard/Enterprises/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Pais",
+            "id_module" => 2,
+            "route" => "/Dashboard/Country/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Departamento",
+            "id_module" => 2,
+            "route" => "/Dashboard/Departament/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Ciudad",
+            "id_module" => 2,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Area",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Cargo",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Rango de Autoridad",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Tipo de Contratos",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Tipo de Documentos",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Caja de Compensación",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Pensión",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Banco",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Arl",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
+        ]);
+        SubModule::create([
+            "name_submodules" => "Eps",
+            "id_module" => 3,
+            "route" => "/Dashboard/City/Index"
         ]);
     }
 }

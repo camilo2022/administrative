@@ -86,5 +86,20 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.Enterprises.Hide.SubModules'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Enterprises.Hide.SubModule.allsubmodules'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Enterprises.Unssign_submodules'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Country.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Country.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Country.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Country.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Departament.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Departament.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Departament.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Departament.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.City.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.City.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.City.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.City.Destroy'])->syncRoles([$superadmin]);
       }
 }

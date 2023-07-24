@@ -100,4 +100,18 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/Enterprises/Hide/SubModule/allsubmodule', 'EnterprisesController@hide_allsubmodules')->middleware('can:Dashboard.Enterprises.Hide.SubModule.allsubmodules')->name('Dashboard.Enterprises.Hide.SubModule.allsubmodules');
     Route::post('/Dashboard/Enterprises/Unssign_submodules/{id}', 'EnterprisesController@enterprise_unssign_submodules')->middleware('can:Dashboard.Enterprises.Unssign_submodules')->name('Dashboard.Enterprises.Unssign_submodules');
 
+    Route::get('/Dashboard/Country/Index', 'CountryController@index')->middleware('can:Dashboard.Country.Index')->name('Dashboard.Country.Index');
+    Route::post('/Dashboard/Country/Store', 'CountryController@store')->middleware('can:Dashboard.Country.Store')->name('Dashboard.Country.Store');
+    Route::post('/Dashboard/Country/Update/{id}', 'CountryController@update')->middleware('can:Dashboard.Country.Update')->name('Dashboard.Country.Update');
+    Route::post('/Dashboard/Country/Destroy/{id}', 'CountryController@destroy')->middleware('can:Dashboard.Country.Destroy')->name('Dashboard.Country.Destroy');
+
+    Route::get('/Dashboard/Departament/Index', 'DepartamentController@index')->middleware('can:Dashboard.Departament.Index')->name('Dashboard.Departament.Index');
+    Route::post('/Dashboard/Departament/Store', 'DepartamentController@store')->middleware('can:Dashboard.Departament.Store')->name('Dashboard.Departament.Store');
+    Route::post('/Dashboard/Departament/Update/{id}', 'DepartamentController@update')->middleware('can:Dashboard.Departament.Update')->name('Dashboard.Departament.Update');
+    Route::post('/Dashboard/Departament/Destroy/{id}', 'DepartamentController@destroy')->middleware('can:Dashboard.Departament.Destroy')->name('Dashboard.Departament.Destroy');
+
+    Route::get('/Dashboard/City/Index', 'CityController@index')->middleware('can:Dashboard.City.Index')->name('Dashboard.City.Index');
+    Route::post('/Dashboard/City/Store', 'CityController@store')->middleware('can:Dashboard.City.Store')->name('Dashboard.City.Store');
+    Route::post('/Dashboard/City/Update/{id}', 'CityController@update')->middleware('can:Dashboard.City.Update')->name('Dashboard.City.Update');
+    Route::post('/Dashboard/City/Destroy/{id}', 'CityController@destroy')->middleware('can:Dashboard.City.Destroy')->name('Dashboard.City.Destroy');
 });

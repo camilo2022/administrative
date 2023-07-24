@@ -32,7 +32,7 @@
 
     <link rel="stylesheet" href="{{ asset('plugins/dropify/css/dropify.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/chosen.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/chosen.min.css') }}">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -49,10 +49,10 @@
     <div class="navbar-right mt-3">
         <ul class="navbar-nav">
             <li class="dropdown">
-                <a href="javascript:void(0);" class="dropdown-toggle" title="Notifications" data-toggle="dropdown"
-                    role="button"><i class="zmdi zmdi-notifications"></i>
-                    <div class="notify"><span class="heartbit"></span><span
-                            class="point">0</span>
+                <a href="javascript:void(0);" class="dropdown-toggle text-white" title="Notifications" data-toggle="dropdown"
+                    role="button"><i class="zmdi zmdi-notifications text-white"></i>
+                    <div class="notify text-white"><span class="heartbit text-white"></span><span
+                            class="point text-white">0</span>
 
                     </div>
                 </a>
@@ -79,7 +79,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                    <i class="zmdi zmdi-power"></i>
+                    <i class="zmdi zmdi-power text-white"></i>
                 </a></li>
         </ul>
     </div>

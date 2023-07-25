@@ -66,7 +66,7 @@ class DepartamentController extends Controller
                 return back()->withErrors('¡No se editó el departamento por que ya existe!');
             }
         }
-        $departament = Departament::where('id', $request->id)->firstOrFail();
+        $departament = Departament::findOrFail($id);
         $departament->name = $request->name;
         $departament->id_country = $request->id_country;
         $departament->save();

@@ -65,52 +65,52 @@ class SubModuleSeeder extends Seeder
         SubModule::create([
             "name_submodules" => "Area",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Area/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Cargo",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Post/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Rango de Autoridad",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Rank/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Tipo de Contratos",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/TypeContract/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Tipo de Documentos",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/TypeDocument/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Caja de Compensación",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Box/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Pensión",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Pension/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Banco",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Bank/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Arl",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Arl/Index"
         ]);
         SubModule::create([
             "name_submodules" => "Eps",
             "id_module" => 3,
-            "route" => "/Dashboard/City/Index"
+            "route" => "/Dashboard/Eps/Index"
         ]);
     }
 }

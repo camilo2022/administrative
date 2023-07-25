@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-    <title>Redsuelva</title>
+    <title>{{ $ent->name_enterprise }}</title>
     <link rel="icon" href="{{ asset('images/icon_logo.png') }}" type="image/x-icon"> <!-- Favicon-->
 
     <!-- CSRF Token -->
@@ -94,7 +94,8 @@
         <div class="navbar-brand">
             <button class="btn-menu ls-toggle-btn text-white" type="button"><i class="zmdi zmdi-menu"></i></button>
             <a href="{{route('home')}}"><img src="{{ asset('images/icon_logo.png') }}" width="25" style="height:25 !important;" alt="Aero"><span
-                    class="m-l-10 text-white">SHOTOKU</span></a>
+                    class="m-l-10 text-white" style="font-weight: bold; font-size: 17px;">SHOTOKU</span>
+            </a>
 
         </div>
         <div class="menu">
@@ -105,7 +106,7 @@
                         <a class="image"><img src="{{ asset('images/user.png') }}" alt="User"></a>
                         <div class="detail">
                             <h4 class="text-white">{{ Auth::user()->name }}</h4>
-
+                            <small class="text-white">{{ $ent->name_enterprise }}</small>
                         </div>
                     </div>
                 </li>

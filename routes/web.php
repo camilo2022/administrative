@@ -114,4 +114,24 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/City/Store', 'CityController@store')->middleware('can:Dashboard.City.Store')->name('Dashboard.City.Store');
     Route::post('/Dashboard/City/Update/{id}', 'CityController@update')->middleware('can:Dashboard.City.Update')->name('Dashboard.City.Update');
     Route::post('/Dashboard/City/Destroy/{id}', 'CityController@destroy')->middleware('can:Dashboard.City.Destroy')->name('Dashboard.City.Destroy');
+
+    Route::get('/Dashboard/Area/Index', 'AreaController@index')->middleware('can:Dashboard.Area.Index')->name('Dashboard.Area.Index');
+    Route::post('/Dashboard/Area/Store', 'AreaController@store')->middleware('can:Dashboard.Area.Store')->name('Dashboard.Area.Store');
+    Route::post('/Dashboard/Area/Update/{id}', 'AreaController@update')->middleware('can:Dashboard.Area.Update')->name('Dashboard.Area.Update');
+    Route::post('/Dashboard/Area/Destroy/{id}', 'AreaController@destroy')->middleware('can:Dashboard.Area.Destroy')->name('Dashboard.Area.Destroy');
+
+    Route::get('/Dashboard/Post/Index', 'PostController@index')->middleware('can:Dashboard.Post.Index')->name('Dashboard.Post.Index');
+    Route::post('/Dashboard/Post/Store', 'PostController@store')->middleware('can:Dashboard.Post.Store')->name('Dashboard.Post.Store');
+    Route::post('/Dashboard/Post/Update/{id}', 'PostController@update')->middleware('can:Dashboard.Post.Update')->name('Dashboard.Post.Update');
+    Route::post('/Dashboard/Post/Destroy/{id}', 'PostController@destroy')->middleware('can:Dashboard.Post.Destroy')->name('Dashboard.Post.Destroy');
+    
+    Route::get('/Dashboard/Rank/Index', 'RankController@index')->middleware('can:Dashboard.Rank.Index')->name('Dashboard.Rank.Index');
+    Route::post('/Dashboard/Rank/Store', 'RankController@store')->middleware('can:Dashboard.Rank.Store')->name('Dashboard.Rank.Store');
+    Route::post('/Dashboard/Rank/Update/{id}', 'RankController@update')->middleware('can:Dashboard.Rank.Update')->name('Dashboard.Rank.Update');
+    Route::post('/Dashboard/Rank/Destroy/{id}', 'RankController@destroy')->middleware('can:Dashboard.Rank.Destroy')->name('Dashboard.Rank.Destroy');
+
+    Route::get('/Dashboard/TypeContract/Index', 'TypeContractController@index')->middleware('can:Dashboard.TypeContract.Index')->name('Dashboard.TypeContract.Index');
+    Route::post('/Dashboard/TypeContract/Store', 'TypeContractController@store')->middleware('can:Dashboard.TypeContract.Store')->name('Dashboard.TypeContract.Store');
+    Route::post('/Dashboard/TypeContract/Update/{id}', 'TypeContractController@update')->middleware('can:Dashboard.TypeContract.Update')->name('Dashboard.TypeContract.Update');
+    Route::post('/Dashboard/TypeContract/Destroy/{id}', 'TypeContractController@destroy')->middleware('can:Dashboard.TypeContract.Destroy')->name('Dashboard.TypeContract.Destroy');
 });

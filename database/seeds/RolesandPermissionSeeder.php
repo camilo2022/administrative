@@ -101,5 +101,25 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.City.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.City.Update'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.City.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Area.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Area.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Area.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Area.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Post.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Post.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Post.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Post.Destroy'])->syncRoles([$superadmin]);
+        
+        Permission::create(['name' => 'Dashboard.Rank.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Rank.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Rank.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Rank.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.TypeContract.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeContract.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeContract.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeContract.Destroy'])->syncRoles([$superadmin]);
       }
 }

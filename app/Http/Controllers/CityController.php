@@ -67,7 +67,7 @@ class CityController extends Controller
             }
         }
 
-        $city = City::where('id', $request->id)->firstOrFail();
+        $city = City::findOrFail($id);
         $city->name = $request->name;
         $city->id_departament = $request->id_departament;
         $city->save();

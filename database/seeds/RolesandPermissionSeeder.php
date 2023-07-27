@@ -121,5 +121,30 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.TypeContract.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.TypeContract.Update'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.TypeContract.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Box.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Box.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Box.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Box.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Pension.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Pension.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Pension.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Pension.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Bank.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Bank.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Bank.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Bank.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Arl.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Arl.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Arl.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Arl.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.Eps.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Eps.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Eps.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.Eps.Destroy'])->syncRoles([$superadmin]);
       }
 }

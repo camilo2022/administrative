@@ -134,4 +134,29 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/TypeContract/Store', 'TypeContractController@store')->middleware('can:Dashboard.TypeContract.Store')->name('Dashboard.TypeContract.Store');
     Route::post('/Dashboard/TypeContract/Update/{id}', 'TypeContractController@update')->middleware('can:Dashboard.TypeContract.Update')->name('Dashboard.TypeContract.Update');
     Route::post('/Dashboard/TypeContract/Destroy/{id}', 'TypeContractController@destroy')->middleware('can:Dashboard.TypeContract.Destroy')->name('Dashboard.TypeContract.Destroy');
+    
+    Route::get('/Dashboard/Box/Index', 'BoxController@index')->middleware('can:Dashboard.Box.Index')->name('Dashboard.Box.Index');
+    Route::post('/Dashboard/Box/Store', 'BoxController@store')->middleware('can:Dashboard.Box.Store')->name('Dashboard.Box.Store');
+    Route::post('/Dashboard/Box/Update/{id}', 'BoxController@update')->middleware('can:Dashboard.Box.Update')->name('Dashboard.Box.Update');
+    Route::post('/Dashboard/Box/Destroy/{id}', 'BoxController@destroy')->middleware('can:Dashboard.Box.Destroy')->name('Dashboard.Box.Destroy');
+    
+    Route::get('/Dashboard/Pension/Index', 'PensionController@index')->middleware('can:Dashboard.Pension.Index')->name('Dashboard.Pension.Index');
+    Route::post('/Dashboard/Pension/Store', 'PensionController@store')->middleware('can:Dashboard.Pension.Store')->name('Dashboard.Pension.Store');
+    Route::post('/Dashboard/Pension/Update/{id}', 'PensionController@update')->middleware('can:Dashboard.Pension.Update')->name('Dashboard.Pension.Update');
+    Route::post('/Dashboard/Pension/Destroy/{id}', 'PensionController@destroy')->middleware('can:Dashboard.Pension.Destroy')->name('Dashboard.Pension.Destroy');
+
+    Route::get('/Dashboard/Bank/Index', 'BankController@index')->middleware('can:Dashboard.Bank.Index')->name('Dashboard.Bank.Index');
+    Route::post('/Dashboard/Bank/Store', 'BankController@store')->middleware('can:Dashboard.Bank.Store')->name('Dashboard.Bank.Store');
+    Route::post('/Dashboard/Bank/Update/{id}', 'BankController@update')->middleware('can:Dashboard.Bank.Update')->name('Dashboard.Bank.Update');
+    Route::post('/Dashboard/Bank/Destroy/{id}', 'BankController@destroy')->middleware('can:Dashboard.Bank.Destroy')->name('Dashboard.Bank.Destroy');
+
+    Route::get('/Dashboard/Arl/Index', 'ArlController@index')->middleware('can:Dashboard.Arl.Index')->name('Dashboard.Arl.Index');
+    Route::post('/Dashboard/Arl/Store', 'ArlController@store')->middleware('can:Dashboard.Arl.Store')->name('Dashboard.Arl.Store');
+    Route::post('/Dashboard/Arl/Update/{id}', 'ArlController@update')->middleware('can:Dashboard.Arl.Update')->name('Dashboard.Arl.Update');
+    Route::post('/Dashboard/Arl/Destroy/{id}', 'ArlController@destroy')->middleware('can:Dashboard.Arl.Destroy')->name('Dashboard.Arl.Destroy');
+
+    Route::get('/Dashboard/Eps/Index', 'EpsController@index')->middleware('can:Dashboard.Eps.Index')->name('Dashboard.Eps.Index');
+    Route::post('/Dashboard/Eps/Store', 'EpsController@store')->middleware('can:Dashboard.Eps.Store')->name('Dashboard.Eps.Store');
+    Route::post('/Dashboard/Eps/Update/{id}', 'EpsController@update')->middleware('can:Dashboard.Eps.Update')->name('Dashboard.Eps.Update');
+    Route::post('/Dashboard/Eps/Destroy/{id}', 'EpsController@destroy')->middleware('can:Dashboard.Eps.Destroy')->name('Dashboard.Eps.Destroy');
 });

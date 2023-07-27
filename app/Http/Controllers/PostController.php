@@ -37,6 +37,7 @@ class PostController extends Controller
             if ($validator->errors()->has('description')) {
                 $descriptionErrors = '¡No se creó el cargo porque la descripción ';
                 $descriptionErrors .= $validator->errors()->first('description');
+                $descriptionErrors = str_replace('El campo ','',$descriptionErrors); 
                 return back()->withErrors($descriptionErrors);
             }
         }
@@ -81,6 +82,7 @@ class PostController extends Controller
             if ($validator->errors()->has('description')) {
                 $descriptionErrors = '¡No se editó el cargo porque la descripción ';
                 $descriptionErrors .= $validator->errors()->first('description');
+                $descriptionErrors = str_replace('El campo ','',$descriptionErrors); 
                 return back()->withErrors($descriptionErrors);
             }
         }

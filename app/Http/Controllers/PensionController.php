@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\TypeContract;
+use App\Pension;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 
-class TypeContractController extends Controller
+class PensionController extends Controller
 {
     public function index()
     {
-        $type_contracts = TypeContract::all();
-        return view('Dashboard.TypeContract.Index', compact('type_contracts'));
+        $pensions = Pension::all();
+        return view('Dashboard.Pension.Index', compact('pensions'));
     }
 
     public function create()
@@ -23,28 +23,28 @@ class TypeContractController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:type_contract',
-            'description' => 'required|unique:type_contract|max:255',
+            'name' => 'required|unique:pensions',
+            'description' => 'required|unique:pensions|max:255',
         ]);
 
         if ($validator->fails()) {
             if ($validator->errors()->has('name')) {
-                return back()->withErrors('¡No se creó el tipo de contrato por que ya existe!');
+                return back()->withErrors('¡No se creó el fondo de pensión por que ya existe!');
             }
             if ($validator->errors()->has('description')) {
-                $descriptionErrors = '¡No se creó el tipo de contrato porque la descripción ';
+                $descriptionErrors = '¡No se creó el fondo de pensión porque la descripción ';
                 $descriptionErrors .= $validator->errors()->first('description');
                 $descriptionErrors = str_replace('El campo ','',$descriptionErrors); 
                 return back()->withErrors($descriptionErrors);
             }
         }
 
-        $type_contract = new TypeContract();
-        $type_contract->name = $request->name;
-        $type_contract->description = $request->description;
-        $type_contract->save();
+        $pension = new Pension();
+        $pension->name = $request->name;
+        $pension->description = $request->description;
+        $pension->save();
 
-        return back()->withSuccess('¡Tipo de Contrato agregado satisfactoriamente!');
+        return back()->withSuccess('¡Fondo de pensión creada satisfactoriamente!');
     }
 
     public function show($id)
@@ -62,41 +62,41 @@ class TypeContractController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => [
                 'required',
-                Rule::unique('type_contract')->ignore($id),
+                Rule::unique('pensions')->ignore($id),
             ],
             'description' => [
                 'required',
                 'max:255',
-                Rule::unique('type_contract')->ignore($id),
+                Rule::unique('pensions')->ignore($id),
             ],
         ]);
         
         if ($validator->fails()) {
             if ($validator->errors()->has('name')) {
-                return back()->withErrors('¡No se editó el tipo de contrato por que ya existe!');
+                return back()->withErrors('¡No se editó el fonod de pensión por que ya existe!');
             }
             if ($validator->errors()->has('description')) {
-                $descriptionErrors = '¡No se editó el tipo de contrato porque la descripción ';
+                $descriptionErrors = '¡No se editó el fonod de pensión por que la descripción ';
                 $descriptionErrors .= $validator->errors()->first('description');
                 $descriptionErrors = str_replace('El campo ','',$descriptionErrors); 
                 return back()->withErrors($descriptionErrors);
             }
         }
-        $type_contract = TypeContract::findOrFail($id);
-        $type_contract->name = $request->name;
-        $type_contract->description = $request->description;
-        $type_contract->save();
+        $pension = Pension::findOrFail($id);
+        $pension->name = $request->name;
+        $pension->description = $request->description;
+        $pension->save();
 
-        return back()->withSuccess('¡Tipo de Contrato actualizado satisfactoriamente!');
+        return back()->withSuccess('¡Fondo de pensión actualizado satisfactoriamente!');
     }
 
     public function destroy($id)
     {
         try{
-            TypeContract::findOrFail($id)->delete();
-            return back()->withSuccess('¡Tipo de Contrato eliminado satisfactoriamente!');
+            Pension::findOrFail($id)->delete();
+            return back()->withSuccess('¡Fondo de pensión eliminado satisfactoriamente!');
         }catch(\Exception $e){
-            return back()->withErrors('¡Error al eliminar el tipo de contrato!');
+            return back()->withErrors('¡Error al eliminar el fondo de pensión!');
         }  
     }
 }

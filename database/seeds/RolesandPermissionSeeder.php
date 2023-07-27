@@ -6,34 +6,34 @@ use Spatie\Permission\Models\Permission;
 
 class RolesandPermissionSeeder extends Seeder
 {
-    
-  
+
+
     public function run()
     {
 
         $superadmin = Role::create(['name' => 'superadmin']);
         $admin = Role::create(['name' => 'admin']);
-        
-        Permission::create(['name' => '/home'])->syncRoles([$superadmin, $admin]);       
-        Permission::create(['name' => 'Dashboard.User.Index'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Create'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Store'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Password'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Edit'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Update'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Show.Module'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Assign_module'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Hide.Module'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Unssign_module'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Show.SubModule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Show.SubModule.allsubmodule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Assign_submodule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Hide.SubModule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Hide.SubModule.allsubmodule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Unssign_submodule'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Destroy'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Restore'])->syncRoles([$superadmin, $admin]);  
-        Permission::create(['name' => 'Dashboard.User.Inactivos'])->syncRoles([$superadmin, $admin]); 
+
+        Permission::create(['name' => '/home'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Index'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Create'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Store'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Password'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Edit'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Update'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Show.Module'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Assign_module'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Hide.Module'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Unssign_module'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Show.SubModule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Show.SubModule.allsubmodule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Assign_submodule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Hide.SubModule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Hide.SubModule.allsubmodule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Unssign_submodule'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Destroy'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Restore'])->syncRoles([$superadmin, $admin]);
+        Permission::create(['name' => 'Dashboard.User.Inactivos'])->syncRoles([$superadmin, $admin]);
 
         Permission::create(['name' => 'Dashboard.Rol.Index'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Rol.Store'])->syncRoles([$superadmin]);
@@ -67,7 +67,7 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.SubModule.Assign_rol'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.SubModule.Hide'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.SubModule.Unsign_rol'])->syncRoles([$superadmin]);
-        
+
         Permission::create(['name' => 'Dashboard.Enterprises.Index'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Enterprises.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Enterprises.Update'])->syncRoles([$superadmin]);
@@ -111,7 +111,7 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.Post.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Post.Update'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Post.Destroy'])->syncRoles([$superadmin]);
-        
+
         Permission::create(['name' => 'Dashboard.Rank.Index'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Rank.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Rank.Update'])->syncRoles([$superadmin]);
@@ -121,6 +121,11 @@ class RolesandPermissionSeeder extends Seeder
         Permission::create(['name' => 'Dashboard.TypeContract.Store'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.TypeContract.Update'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.TypeContract.Destroy'])->syncRoles([$superadmin]);
+
+        Permission::create(['name' => 'Dashboard.TypeDocument.Index'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeDocument.Store'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeDocument.Update'])->syncRoles([$superadmin]);
+        Permission::create(['name' => 'Dashboard.TypeDocument.Destroy'])->syncRoles([$superadmin]);
 
         Permission::create(['name' => 'Dashboard.Box.Index'])->syncRoles([$superadmin]);
         Permission::create(['name' => 'Dashboard.Box.Store'])->syncRoles([$superadmin]);

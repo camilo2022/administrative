@@ -11,8 +11,8 @@ class EpsController extends Controller
 {
     public function index()
     {
-        $banks = Eps::all();
-        return view('Dashboard.Bank.Index', compact('banks'));
+        $epss = Eps::all();
+        return view('Dashboard.Eps.Index', compact('epss'));
     }
 
     public function create()
@@ -23,20 +23,20 @@ class EpsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:banks',
+            'name' => 'required|unique:eps',
         ]);
 
         if ($validator->fails()) {
             if ($validator->errors()->has('name')) {
-                return back()->withErrors('¡No se creó el banco por que ya existe!');
+                return back()->withErrors('¡No se creó la eps por que ya existe!');
             }
         }
 
-        $bank = new Bank();
-        $bank->name = $request->name;
-        $bank->save();
+        $eps = new Eps();
+        $eps->name = $request->name;
+        $eps->save();
 
-        return back()->withSuccess('¡Banco agregado satisfactoriamente!');
+        return back()->withSuccess('¡Eps agregado satisfactoriamente!');
     }
 
     public function show($id)
@@ -54,30 +54,30 @@ class EpsController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => [
                 'required',
-                Rule::unique('banks')->ignore($id),
+                Rule::unique('eps')->ignore($id),
             ],
         ]);
-        
+
         if ($validator->fails()) {
             if ($validator->errors()->has('name')) {
-                return back()->withErrors('¡No se editó el banco por que ya existe!');
+                return back()->withErrors('¡No se editó la eps por que ya existe!');
             }
         }
 
-        $bank = Bank::findOrFail($id);
-        $bank->name = $request->name;
-        $bank->save();
+        $eps = Eps::findOrFail($id);
+        $eps->name = $request->name;
+        $eps->save();
 
-        return back()->withSuccess('¡Banco actualizado satisfactoriamente!');
+        return back()->withSuccess('¡Eps actualizado satisfactoriamente!');
     }
 
     public function destroy($id)
     {
         try{
-            Bank::findOrFail($id)->delete();
-            return back()->withSuccess('¡Banco eliminado satisfactoriamente!');
+            Eps::findOrFail($id)->delete();
+            return back()->withSuccess('¡Eps eliminado satisfactoriamente!');
         }catch(\Exception $e){
-            return back()->withErrors('¡Error al eliminar el bancoo!');
-        } 
+            return back()->withErrors('¡Error al eliminar el eps!');
+        }
     }
 }

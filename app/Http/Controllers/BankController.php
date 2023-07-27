@@ -57,7 +57,7 @@ class BankController extends Controller
                 Rule::unique('banks')->ignore($id),
             ],
         ]);
-        
+
         if ($validator->fails()) {
             if ($validator->errors()->has('name')) {
                 return back()->withErrors('¡No se editó el banco por que ya existe!');
@@ -77,7 +77,7 @@ class BankController extends Controller
             Bank::findOrFail($id)->delete();
             return back()->withSuccess('¡Banco eliminado satisfactoriamente!');
         }catch(\Exception $e){
-            return back()->withErrors('¡Error al eliminar el bancoo!');
-        } 
+            return back()->withErrors('¡Error al eliminar el banco!');
+        }
     }
 }

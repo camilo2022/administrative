@@ -87,16 +87,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/Enterprises/Destroy/{id}', 'EnterprisesController@destroy')->middleware('can:Dashboard.Enterprises.Destroy')->name('Dashboard.Enterprises.Destroy');
     Route::get('/Dashboard/Enterprises/Show/Users/{id}', 'EnterprisesController@show_users')->middleware('can:Dashboard.Enterprises.Show.Users')->name('Dashboard.Enterprises.Show.Users');
     Route::post('/Dashboard/Enterprises/Assign_users/{id}', 'EnterprisesController@enterprise_assign_user')->middleware('can:Dashboard.Enterprises.Assign_users')->name('Dashboard.Enterprises.Assign_users');
-    Route::get('/Dashboard/Enterprises/Hide/Users/{id}', 'EnterprisesController@hide_users')->middleware('can:Dashboard.Enterprises.Hide.Users')->name('Dashboard.Enterprises.Hide.Users'); 
+    Route::get('/Dashboard/Enterprises/Hide/Users/{id}', 'EnterprisesController@hide_users')->middleware('can:Dashboard.Enterprises.Hide.Users')->name('Dashboard.Enterprises.Hide.Users');
     Route::post('/Dashboard/Enterprises/Unssign_users/{id}', 'EnterprisesController@enterprise_unssign_user')->middleware('can:Dashboard.Enterprises.Unssign_users')->name('Dashboard.Enterprises.Unssign_users');
     Route::get('/Dashboard/Enterprises/Show/Modules/{id}', 'EnterprisesController@show_modules')->middleware('can:Dashboard.Enterprises.Show.Modules')->name('Dashboard.Enterprises.Show.Modules');
     Route::post('/Dashboard/Enterprises/Assign_modules/{id}', 'EnterprisesController@enterprise_assign_modules')->middleware('can:Dashboard.Enterprises.Assign_modules')->name('Dashboard.Enterprises.Assign_modules');
-    Route::get('/Dashboard/Enterprises/Hide/Modules/{id}', 'EnterprisesController@hide_modules')->middleware('can:Dashboard.Enterprises.Hide.Modules')->name('Dashboard.Enterprises.Hide.Modules'); 
+    Route::get('/Dashboard/Enterprises/Hide/Modules/{id}', 'EnterprisesController@hide_modules')->middleware('can:Dashboard.Enterprises.Hide.Modules')->name('Dashboard.Enterprises.Hide.Modules');
     Route::post('/Dashboard/Enterprises/Unssign_modules/{id}', 'EnterprisesController@enterprise_unssign_modules')->middleware('can:Dashboard.Enterprises.Unssign_modules')->name('Dashboard.Enterprises.Unssign_modules');
     Route::get('/Dashboard/Enterprises/Show/SubModules/{id}', 'EnterprisesController@show_submodules')->middleware('can:Dashboard.Enterprises.Show.SubModules')->name('Dashboard.Enterprises.Show.SubModules');
     Route::post('/Dashboard/Enterprises/Show/SubModule/allsubmodule', 'EnterprisesController@show_allsubmodules')->middleware('can:Dashboard.Enterprises.Show.SubModule.allsubmodules')->name('Dashboard.Enterprises.Show.SubModule.allsubmodules');
     Route::post('/Dashboard/Enterprises/Assign_submodules/{id}', 'EnterprisesController@enterprise_assign_submodules')->middleware('can:Dashboard.Enterprises.Assign_submodules')->name('Dashboard.Enterprises.Assign_submodules');
-    Route::get('/Dashboard/Enterprises/Hide/SubModules/{id}', 'EnterprisesController@hide_submodules')->middleware('can:Dashboard.Enterprises.Hide.SubModules')->name('Dashboard.Enterprises.Hide.SubModules'); 
+    Route::get('/Dashboard/Enterprises/Hide/SubModules/{id}', 'EnterprisesController@hide_submodules')->middleware('can:Dashboard.Enterprises.Hide.SubModules')->name('Dashboard.Enterprises.Hide.SubModules');
     Route::post('/Dashboard/Enterprises/Hide/SubModule/allsubmodule', 'EnterprisesController@hide_allsubmodules')->middleware('can:Dashboard.Enterprises.Hide.SubModule.allsubmodules')->name('Dashboard.Enterprises.Hide.SubModule.allsubmodules');
     Route::post('/Dashboard/Enterprises/Unssign_submodules/{id}', 'EnterprisesController@enterprise_unssign_submodules')->middleware('can:Dashboard.Enterprises.Unssign_submodules')->name('Dashboard.Enterprises.Unssign_submodules');
 
@@ -124,7 +124,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/Post/Store', 'PostController@store')->middleware('can:Dashboard.Post.Store')->name('Dashboard.Post.Store');
     Route::post('/Dashboard/Post/Update/{id}', 'PostController@update')->middleware('can:Dashboard.Post.Update')->name('Dashboard.Post.Update');
     Route::post('/Dashboard/Post/Destroy/{id}', 'PostController@destroy')->middleware('can:Dashboard.Post.Destroy')->name('Dashboard.Post.Destroy');
-    
+
     Route::get('/Dashboard/Rank/Index', 'RankController@index')->middleware('can:Dashboard.Rank.Index')->name('Dashboard.Rank.Index');
     Route::post('/Dashboard/Rank/Store', 'RankController@store')->middleware('can:Dashboard.Rank.Store')->name('Dashboard.Rank.Store');
     Route::post('/Dashboard/Rank/Update/{id}', 'RankController@update')->middleware('can:Dashboard.Rank.Update')->name('Dashboard.Rank.Update');
@@ -134,12 +134,17 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/TypeContract/Store', 'TypeContractController@store')->middleware('can:Dashboard.TypeContract.Store')->name('Dashboard.TypeContract.Store');
     Route::post('/Dashboard/TypeContract/Update/{id}', 'TypeContractController@update')->middleware('can:Dashboard.TypeContract.Update')->name('Dashboard.TypeContract.Update');
     Route::post('/Dashboard/TypeContract/Destroy/{id}', 'TypeContractController@destroy')->middleware('can:Dashboard.TypeContract.Destroy')->name('Dashboard.TypeContract.Destroy');
-    
+
+    Route::get('/Dashboard/TypeDocument/Index', 'TypeDocumentController@index')->middleware('can:Dashboard.TypeDocument.Index')->name('Dashboard.TypeDocument.Index');
+    Route::post('/Dashboard/TypeDocument/Store', 'TypeDocumentController@store')->middleware('can:Dashboard.TypeDocument.Store')->name('Dashboard.TypeDocument.Store');
+    Route::post('/Dashboard/TypeDocument/Update/{id}', 'TypeDocumentController@update')->middleware('can:Dashboard.TypeDocument.Update')->name('Dashboard.TypeDocument.Update');
+    Route::post('/Dashboard/TypeDocument/Destroy/{id}', 'TypeDocumentController@destroy')->middleware('can:Dashboard.TypeDocument.Destroy')->name('Dashboard.TypeDocument.Destroy');
+
     Route::get('/Dashboard/Box/Index', 'BoxController@index')->middleware('can:Dashboard.Box.Index')->name('Dashboard.Box.Index');
     Route::post('/Dashboard/Box/Store', 'BoxController@store')->middleware('can:Dashboard.Box.Store')->name('Dashboard.Box.Store');
     Route::post('/Dashboard/Box/Update/{id}', 'BoxController@update')->middleware('can:Dashboard.Box.Update')->name('Dashboard.Box.Update');
     Route::post('/Dashboard/Box/Destroy/{id}', 'BoxController@destroy')->middleware('can:Dashboard.Box.Destroy')->name('Dashboard.Box.Destroy');
-    
+
     Route::get('/Dashboard/Pension/Index', 'PensionController@index')->middleware('can:Dashboard.Pension.Index')->name('Dashboard.Pension.Index');
     Route::post('/Dashboard/Pension/Store', 'PensionController@store')->middleware('can:Dashboard.Pension.Store')->name('Dashboard.Pension.Store');
     Route::post('/Dashboard/Pension/Update/{id}', 'PensionController@update')->middleware('can:Dashboard.Pension.Update')->name('Dashboard.Pension.Update');

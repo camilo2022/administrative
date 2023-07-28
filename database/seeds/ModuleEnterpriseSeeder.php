@@ -15,5 +15,10 @@ class ModuleEnterpriseSeeder extends Seeder
         ModuleEnterprise::create([ 'modules_id' => 1, 'enterprises_id' => 1, ]);
         ModuleEnterprise::create([ 'modules_id' => 2, 'enterprises_id' => 1, ]);
         ModuleEnterprise::create([ 'modules_id' => 3, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 4, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 5, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 6, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 7, 'enterprises_id' => 1, ]);
+        ModuleEnterprise::create([ 'modules_id' => 8, 'enterprises_id' => 1, ]);
     }
 }

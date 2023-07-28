@@ -164,4 +164,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/Eps/Store', 'EpsController@store')->middleware('can:Dashboard.Eps.Store')->name('Dashboard.Eps.Store');
     Route::post('/Dashboard/Eps/Update/{id}', 'EpsController@update')->middleware('can:Dashboard.Eps.Update')->name('Dashboard.Eps.Update');
     Route::post('/Dashboard/Eps/Destroy/{id}', 'EpsController@destroy')->middleware('can:Dashboard.Eps.Destroy')->name('Dashboard.Eps.Destroy');
+
+    
 });

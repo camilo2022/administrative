@@ -19,6 +19,7 @@ class ModulesSeeder extends Seeder
         Module::create([ 'name_modules' => 'Talento Humano', 'icon_modules' => 'zmdi zmdi-male-female']);
         Module::create([ 'name_modules' => 'Logistica', 'icon_modules' => 'zmdi zmdi-shopping-cart']);
         Module::create([ 'name_modules' => 'Contabilidad', 'icon_modules' => 'zmdi zmdi-money']);
+        Module::create([ 'name_modules' => 'Facturacion', 'icon_modules' => 'zmdi zmdi-store']);
         Module::create([ 'name_modules' => 'Reportes', 'icon_modules' => 'zmdi zmdi-assignment']);
     }
 }

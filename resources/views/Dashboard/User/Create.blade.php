@@ -16,8 +16,8 @@
                             @csrf
 
                             <div class="header">
-                                <img class="logo" src="{{ asset('images/register.png') }}"
-                                    style="position: relative;width:20%;" alt="">
+                                <img class="logo" src="{{ asset('images/icon_logo.png') }}"
+                                    style="position: relative;width:30%;" alt="">
 
                             </div>
                             <div class="body ">

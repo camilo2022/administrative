@@ -124,14 +124,22 @@
                             @forelse ($module->SubModules as $subModule)
                                 <li><a href="{{ $subModule->route }}" class="text-white">{{ $subModule->name_submodules }}</a></li>
                             @empty
-                                no tienes submodulos asignados
+                                <li><a href="#" class="text-white">Sin SubModulos</a></li>
                             @endforelse
                         </ul>
                     </li>
                 @empty
-                    no tienes modulos asigandos
+                <li>
+                    <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block text-white">
+                        <i class="zmdi zmdi-block-alt text-white"></i>
+                        <span>Sin Modulos</span>
+                    </a>
+                    <ul class="ml-menu">
+                        <li><a href="#" class="text-white">Sin SubModulos</a></li>
+                    </ul>
+                </li>
                 @endforelse
-                
+
 
             </ul>
 
@@ -154,7 +162,7 @@
 
 
 
-<script src="{{ asset('js/app.js') }}"></script> 
+<script src="{{ asset('js/app.js') }}"></script>
 <script>
 </script>
 

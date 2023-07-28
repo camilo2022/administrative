@@ -49,6 +49,11 @@ class UserModuleSubmoduleSeeder extends Seeder
             "sub_modules" => "[]"
         ]);
         UserModule::create([
+            "user_id" => 1,
+            "module_id" => 8,
+            "sub_modules" => "[]"
+        ]);
+        UserModule::create([
             "user_id" => 2,
             "module_id" => 1,
             "sub_modules" => "[1,2]"

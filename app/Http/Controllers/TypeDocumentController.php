@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\TypeDocument;
+use App\DocumentType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -11,7 +11,7 @@ class TypeDocumentController extends Controller
 {
     public function index()
     {
-        $type_documents = TypeDocument::all();
+        $type_documents = DocumentType::all();
         return view('Dashboard.TypeDocument.Index', compact('type_documents'));
     }
 
@@ -39,7 +39,7 @@ class TypeDocumentController extends Controller
             }
         }
 
-        $type_document = new TypeDocument();
+        $type_document = new DocumentType();
         $type_document->name = $request->name;
         $type_document->description = $request->description;
         $type_document->save();
@@ -82,7 +82,7 @@ class TypeDocumentController extends Controller
                 return back()->withErrors($descriptionErrors);
             }
         }
-        $type_document = TypeDocument::findOrFail($id);
+        $type_document = DocumentType::findOrFail($id);
         $type_document->name = $request->name;
         $type_document->description = $request->description;
         $type_document->save();
@@ -93,7 +93,7 @@ class TypeDocumentController extends Controller
     public function destroy($id)
     {
         try{
-            TypeDocument::findOrFail($id)->delete();
+            DocumentType::findOrFail($id)->delete();
             return back()->withSuccess('¡Tipo de documento eliminado satisfactoriamente!');
         }catch(\Exception $e){
             return back()->withErrors('¡Error al eliminar el tipo de documento!');

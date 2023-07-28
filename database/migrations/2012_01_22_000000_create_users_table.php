@@ -19,7 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedBigInteger('employee_id')->nullable()->comment('Codigo empleado relacion');
             $table->unsignedBigInteger('enterprises_id')->comment('Identificacion de la empresa')->nullable();
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('enterprises_id')->references('id')->on('enterprises')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamp('deleted_at')->nullable();

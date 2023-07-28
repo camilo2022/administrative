@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeDocumentTable extends Migration
+class CreateContractTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTypeDocumentTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_document', function (Blueprint $table) {
+        Schema::create('contract_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->comment('Nombre del tipo de documento');
-            $table->string('description')->comment('Descripcion del documento');
+            $table->string('name')->comment('Nombre del tipo de contracto');
+            $table->string('description')->comment('Descripcion del contracto');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTypeDocumentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_document');
+        Schema::dropIfExists('contract_types');
     }
 }

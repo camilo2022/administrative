@@ -36,7 +36,7 @@
 
                                     @csrf
 
-                                    <div class="row p-2 m-2">
+                                    <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group">
                                                 <label for="formGroupExampleInput">Nombre del usuario</label>

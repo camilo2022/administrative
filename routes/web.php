@@ -165,5 +165,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/Dashboard/Eps/Update/{id}', 'EpsController@update')->middleware('can:Dashboard.Eps.Update')->name('Dashboard.Eps.Update');
     Route::post('/Dashboard/Eps/Destroy/{id}', 'EpsController@destroy')->middleware('can:Dashboard.Eps.Destroy')->name('Dashboard.Eps.Destroy');
 
-    
+    Route::get('/Dashboard/Employee/Index', 'EmployeeController@index')->name('Dashboard.Employee.Index');
+    Route::get('/Dashboard/Employee/Create', 'EmployeeController@create')->name('Dashboard.Employee.Create');
+    Route::post('/Dashboard/Employee/Store', 'EmployeeController@store')->name('Dashboard.Employee.Store');
 });

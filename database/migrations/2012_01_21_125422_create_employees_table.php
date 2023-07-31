@@ -23,6 +23,8 @@ class CreateEmployeesTable extends Migration
             $table->string('arl_rate')->nullable()->comment('tarifa arl');
             $table->string('affiliation_date_eps')->nullable()->comment('fecha afiliacion eps');
             $table->string('affiliation_date_arl')->nullable()->comment('fecha afiliacion arl');
+            $table->string('arl_rate')->nullable()->comment('tarifa arl');
+            $table->string('photography')->nullable()->comment('fotografia del empleado');
             $table->unsignedBigInteger('person_id')->comment('Codigo persona relacion');
             $table->unsignedBigInteger('area_id')->comment('Codigo Area relacion');
             $table->unsignedBigInteger('post_id')->comment('Codigo Cargo relacion');

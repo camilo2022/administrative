@@ -32,5 +32,7 @@ class SubModuleEnterpriseSeeder extends Seeder
         SubModuleEnterprise::create([ 'submodules_id' => 18, 'enterprises_id' => 1, ]);
         SubModuleEnterprise::create([ 'submodules_id' => 19, 'enterprises_id' => 1, ]);
         SubModuleEnterprise::create([ 'submodules_id' => 20, 'enterprises_id' => 1, ]);
+        SubModuleEnterprise::create([ 'submodules_id' => 21, 'enterprises_id' => 1, ]);
+
     }
 }

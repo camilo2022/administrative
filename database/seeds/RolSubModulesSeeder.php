@@ -32,6 +32,7 @@ class RolSubModulesSeeder extends Seeder
         RolSubModule::create([ 'id_rol' => 1, 'id_submodule' => 18 ]);
         RolSubModule::create([ 'id_rol' => 1, 'id_submodule' => 19 ]);
         RolSubModule::create([ 'id_rol' => 1, 'id_submodule' => 20 ]);
+        RolSubModule::create([ 'id_rol' => 1, 'id_submodule' => 21 ]);
         RolSubModule::create([ 'id_rol' => 2, 'id_submodule' => 1 ]);
         RolSubModule::create([ 'id_rol' => 2, 'id_submodule' => 2]);
 

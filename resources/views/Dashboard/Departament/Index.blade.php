@@ -102,6 +102,10 @@
     <script>
         $('.dur').not('.alert-important').delay(3000).fadeOut(350);
 
+        new Choices('.id_country', {
+            removeItemButton: false,
+        });
+
         $("#save_departamento").click(function(e) {
             e.preventDefault();
             let name = $.trim($("#name").val());
@@ -238,10 +242,5 @@
             });
         }
 
-        $(document).ready(function() {
-            new Choices('.id_country', {
-                removeItemButton: false,
-            });
-        });
     </script>
 @endsection

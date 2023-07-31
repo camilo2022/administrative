@@ -26,8 +26,6 @@ class CreatePersonsTable extends Migration
             $table->string('address',15000)->comment('Direccion')->default('-');
             $table->string('neighborhood',40)->comment('Barrio')->default('-')->nullable();
             $table->string('type_blood',65)->comment('Tipo de sangre')->default('-');
-            $table->unsignedBigInteger('eps_id')->nullable()->comment('Id de la eps');
-            $table->unsignedBigInteger('arl_id')->nullable()->comment('Id de la arl');
             $table->unsignedBigInteger('city_id')->comment('Id de Ciudad');
             $table->foreign('document_type_id')->references('id')->on('document_types');
             $table->foreign('city_id')->references('id')->on('citys');

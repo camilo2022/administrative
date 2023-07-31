@@ -8,5 +8,7 @@ class Arl extends Model
 {
     protected $table = 'arls';
 
-    protected $fillable = ['name'];
+    protected $fillable = [
+        'name'
+    ];
 }

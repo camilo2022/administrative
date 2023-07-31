@@ -112,5 +112,10 @@ class SubModuleSeeder extends Seeder
             "id_module" => 3,
             "route" => "/Dashboard/Eps/Index"
         ]);
+        SubModule::create([
+            "name_submodules" => "Empleados",
+            "id_module" => 4,
+            "route" => "/Dashboard/Employee/Index"
+        ]);
     }
 }

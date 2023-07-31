@@ -28,5 +28,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CountrysSeeder::class);
         $this->call(DepartamentsSeeder::class);
         $this->call(CitysSeeder::class);
+        $this->call(ArlSeeder::class);
+        $this->call(EpsSeeder::class);
+        $this->call(RankSeeder::class);
+        $this->call(DocumentTypeSeeder::class);
+        $this->call(ContractTypeSeeder::class);
     }
 }

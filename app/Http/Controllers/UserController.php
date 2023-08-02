@@ -14,6 +14,7 @@ use Illuminate\Validation\Rule;
 use App\UserEnterprise;
 use App\Enterprise;
 use App\Module;
+use App\Person;
 use App\SubModule;
 use App\RolModule;
 use App\UserModule;
@@ -24,13 +25,18 @@ class UserController extends Controller
 {
     public function index(Request $request)
     {
-        if (Auth::user()->hasRole('superadmin')) {
+        /* if (Auth::user()->hasRole('superadmin')) {
             $users = User::all();
         } else {
             $users = User::whereDoesntHave('roles', function ($query) {
                 $query->where('name', 'superadmin');
             })->where('enterprises_id', '=', Auth::user()->enterprises_id)->get();
-        }
+        } */
+        $users =  Person::join("employees", "persons.id", "=", "employees.person_id")
+        ->leftjoin("users", "employees.id", "=", "users.employee_id")
+        ->join("contracts", "employees.id", "=", "contracts.employee_id")
+        ->select("persons.*", "users.email","users.name as username","users.id as userid")
+        ->get();
 
         return view('Dashboard.User.Index', compact('users'));
     }

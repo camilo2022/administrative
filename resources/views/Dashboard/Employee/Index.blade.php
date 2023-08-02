@@ -51,7 +51,7 @@
                             </div>
                             <div class="body">
                                 <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table table-bordered display nowrap table table-striped table-hover js-basic-example dataTable">
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>#</th>
@@ -71,7 +71,10 @@
                                                 <td>{{ $employee->person->document_number }}</td>
                                                 <td>{{ $employee->person->email }}</td>
                                                 <td>
-
+                                                    <a type="button" class="btn btn-warning btn-sm text-white"><i class="fas fa-child"></i></a>
+                                                    <a type="button" class="btn btn-info btn-sm text-white"><i class="fas fa-briefcase"></i></a>
+                                                    <a type="button" class="btn btn-secondary btn-sm text-white"><i class="fas fa-paperclip"></i></a>
+                                                    <a type="button" class="btn btn-primary btn-sm text-white"><i class="fas fa-pen"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach

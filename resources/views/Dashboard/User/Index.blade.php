@@ -52,19 +52,20 @@
                             <div class="body">
                                 <div class="table-responsive">
                                     <table
-                                        class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                        class="table table-bordered table-striped display nowrap table-hover js-basic-example dataTable">
                                         <thead class="thead-dark">
                                             <tr>
                                                 <th rowspan="2">#</th>
                                                 <th rowspan="2">Usuario</th>
                                                 <th rowspan="2">Email</th>
-                                                <th rowspan="2">Password</th>
-                                                <th rowspan="2">Editar</th>
-                                                <th rowspan="2">Eliminar</th>
+                                                <th colspan="3">Gestión</th>
                                                 <th colspan="2">Módulos</th>
                                                 <th colspan="2">Submódulos</th>
                                             </tr>
                                             <tr>
+                                                <th>Password</th>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
                                                 <th>Asignar</th>
                                                 <th>Quitar</th>
                                                 <th>Asignar</th>
@@ -78,44 +79,58 @@
                                                 <tr>
 
                                                     <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $user->name }}</td>
+                                                    <td>{{ $user->name.' '.$user->lastname }}</td>
                                                     <td>{{ $user->email }}</td>
-
-                                                    <td>
-                                                        <a class="btn btn-sm text-white" data-toggle='modal'
-                                                            data-target='#modalUser' style="background:#000;"
-                                                            onclick="userinfo({{ $user }})"><i
-                                                                class="fas fa-key text-white"></i></a>
-                                                    </td>
-                                                    <td>
-                                                                <a href="{{ route('Dashboard.User.Edit', $user->id) }}"
-                                                            class="btn btn-primary btn-sm"><i
-                                                                class="fas fa-pen text-white"></i></a>
-                                                    </td>
-                                                    <td>
-                                                        <form method="post" action="{{ route('Dashboard.User.Destroy', $user->id) }}" onsubmit="deleteData(event,this)">
-                                                            @csrf                                                            
-                                                            <button type="submit"
-                                                                class="btn btn-danger btn-sm"><i
-                                                                class="fas fa-trash text-red"></i></button>
-                                                        </form>                                                                
-                                                    </td>
-                                                    <td>
-                                                         <a href="{{ route('Dashboard.User.Show.Module', $user->id) }}"
-                                                            class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></a>
-                                                    </td>
-                                                    <td>
-                                                         <a href="{{ route('Dashboard.User.Hide.Module', $user->id) }}"
-                                                            class="btn btn-warning btn-sm"><i class="fas fa-minus-circle"></i></a>
-                                                    </td>
-                                                    <td>
-                                                         <a href="{{ route('Dashboard.User.Show.SubModule', $user->id) }}"
-                                                            class="btn btn-info btn-sm"><i class="fas fa-check-circle"></i></a>
-                                                    </td>
-                                                    <td>
-                                                         <a href="{{ route('Dashboard.User.Hide.SubModule', $user->id) }}"
-                                                            class="btn btn-sm" style="background: #F44336;"><i class="fas fa-times-circle"></i></a>
-                                                    </td>
+                                                    @if(empty($user->username))
+                                                        <td style="display: none;"></td>
+                                                        <td style="display: none;"></td>
+                                                        <td style="display: none;"></td>
+                                                        <td colspan="7" class="text-center">
+                                                            <a href="" class="btn btn-sm" 
+                                                                style="background: slategray">
+                                                                <i class="fas fa-user-plus"></i>    
+                                                            </a>
+                                                        </td>
+                                                        <td style="display: none;"></td>
+                                                        <td style="display: none;"></td>
+                                                        <td style="display: none;"></td>
+                                                    @else
+                                                        <td>
+                                                            <a class="btn btn-sm text-white" data-toggle='modal'
+                                                                data-target='#modalUser' style="background:#000;"
+                                                                onclick="userinfo({{ $user }})"><i
+                                                                    class="fas fa-key text-white"></i></a>
+                                                        </td>
+                                                        <td>
+                                                                    <a href="{{ route('Dashboard.User.Edit', $user->id) }}"
+                                                                class="btn btn-primary btn-sm"><i
+                                                                    class="fas fa-pen text-white"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <form method="post" action="{{ route('Dashboard.User.Destroy', $user->id) }}" onsubmit="deleteData(event,this)">
+                                                                @csrf                                                            
+                                                                <button type="submit"
+                                                                    class="btn btn-danger btn-sm"><i
+                                                                    class="fas fa-trash text-red"></i></button>
+                                                            </form>                                                                
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('Dashboard.User.Show.Module', $user->id) }}"
+                                                                class="btn btn-success btn-sm"><i class="fas fa-plus-circle"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('Dashboard.User.Hide.Module', $user->id) }}"
+                                                                class="btn btn-warning btn-sm"><i class="fas fa-minus-circle"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('Dashboard.User.Show.SubModule', $user->id) }}"
+                                                                class="btn btn-info btn-sm"><i class="fas fa-check-circle"></i></a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="{{ route('Dashboard.User.Hide.SubModule', $user->id) }}"
+                                                                class="btn btn-sm" style="background: #F44336;"><i class="fas fa-times-circle"></i></a>
+                                                        </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
 

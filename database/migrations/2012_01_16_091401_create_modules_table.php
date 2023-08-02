@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateModulesTable extends Migration
@@ -18,7 +19,8 @@ class CreateModulesTable extends Migration
             $table->boolean('is_active')->default(1);
             $table->string('name_modules')->comment('Nombre de los modulos');
             $table->string('icon_modules')->comment('Icono de los modulos');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'))->comment('Fecha/Hora creacion registro');
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'))->comment('Fecha/Hora actualizacion registro');
         });
     }
 

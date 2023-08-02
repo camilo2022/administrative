@@ -60,13 +60,14 @@
                                                 <th rowspan="2">Acceso Usuarios</th>
                                                 <th rowspan="2">Acceso Modulos</th>
                                                 <th rowspan="2">Acceso Sub Modulos</th>
-                                                <th rowspan="2">Editar</th>
-                                                <th rowspan="2">Eliminar</th>
+                                                <th colspan="2">Gestión</th>
                                                 <th colspan="2">Usuarios</th>
                                                 <th colspan="2">Módulos</th>
                                                 <th colspan="2">Submódulos</th>
                                             </tr>
                                             <tr>
+                                                <th>Editar</th>
+                                                <th>Eliminar</th>
                                                 <th>Asignar</th>
                                                 <th>Quitar</th>
                                                 <th>Asignar</th>

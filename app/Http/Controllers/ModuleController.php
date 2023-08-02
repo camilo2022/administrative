@@ -112,7 +112,7 @@ class ModuleController extends Controller
     {
         $roles = array_map('intval', $request->roles);
         sort($roles);
-        RolModule::whereIn("id_rol","=",$roles)->where("id_module","=",$id)->delete();
+        RolModule::whereIn("id_rol",$roles)->where("id_module","=",$id)->delete();
         return redirect()->route('Dashboard.Module.Index')->withSuccess('¡Roles removidos al modulo satisfactoriamente!');
     }
 

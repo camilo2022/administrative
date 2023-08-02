@@ -11088,7 +11088,7 @@ section.content {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     border-radius: 10px;
-    background: #fff;
+    background: rgb(40, 69, 117);
     min-width: 240px;
     display: none !important;
     position: absolute;

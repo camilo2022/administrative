@@ -67,6 +67,10 @@ class EmployeeController extends Controller
         $person->city_id = $request->city_id;
         $person->save();
 
+
+
+
+
         $employee = new Employee();
         $employee->civil_state = $request->civil_state;
         $employee->date_of_birth = $request->date_of_birth;
@@ -74,6 +78,10 @@ class EmployeeController extends Controller
         $employee->arl_rate = $request->arl_rate;
         $employee->affiliation_date_eps = $request->affiliation_date_eps;
         $employee->affiliation_date_arl = $request->affiliation_date_arl;
+        if($request->hasFile('photography')){
+            $name_encrypt = $request->photography->store('photographyEmployee','local');
+            $employee->photography = $name_encrypt;
+        }
         $employee->person_id = $person->id;
         $employee->area_id = $request->area_id;
         $employee->post_id = $request->post_id;

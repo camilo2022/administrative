@@ -55,17 +55,18 @@
                                         class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th rowspan="2">#</th>
-                                                <th rowspan="2">Empresa</th>
-                                                <th rowspan="2">Acceso Usuarios</th>
-                                                <th rowspan="2">Acceso Modulos</th>
-                                                <th rowspan="2">Acceso Sub Modulos</th>
+                                                <th colspan="5">Informacion</th>
                                                 <th colspan="2">Gestión</th>
                                                 <th colspan="2">Usuarios</th>
                                                 <th colspan="2">Módulos</th>
                                                 <th colspan="2">Submódulos</th>
                                             </tr>
                                             <tr>
+                                                <th>#</th>
+                                                <th>Empresa</th>
+                                                <th>Acceso Usuarios</th>
+                                                <th>Acceso Modulos</th>
+                                                <th>Acceso Sub Modulos</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
                                                 <th>Asignar</th>
@@ -76,7 +77,7 @@
                                                 <th>Quitar</th>
                                             </tr>
                                         </thead>
-                                        
+
                                         <tbody>
 
                                             @foreach ($enterprises as $enterprise)
@@ -114,11 +115,11 @@
                                                     </td>
                                                     <td>
                                                         <form method="post" action="{{ route('Dashboard.Enterprises.Destroy',$enterprise->id ) }}" onsubmit="deleteData(event,this)">
-                                                            @csrf                                                            
+                                                            @csrf
                                                             <button type="submit" class="btn btn-danger btn-sm">
                                                                 <i class="fas fa-trash text-red"></i>
                                                             </button>
-                                                        </form>                                                                
+                                                        </form>
                                                     </td>
                                                     <td>
                                                          <a href="{{ route('Dashboard.Enterprises.Show.Users',$enterprise->id ) }}"

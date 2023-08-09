@@ -55,9 +55,7 @@
                                                 <th>#</th>
                                                 <th>Nombre del usuario</th>
                                                 <th>Email</th>
-                                                <th>Nombre</th>
-
-
+                                                <th>Activar</th>
                                             </tr>
                                         </thead>
                                         <tfoot>
@@ -65,21 +63,17 @@
                                                 <th>#</th>
                                                 <th>Nombre del usuario</th>
                                                 <th>Email</th>
-                                                <th>Gestion</th>
+                                                <th>Activar</th>
                                             </tr>
                                         </tfoot>
                                         <tbody>
-
                                             @foreach ($userse as $user)
                                                 <tr>
-
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $user->name }}</td>
                                                     <td>{{ $user->email }}</td>
-
                                                     <td>
                                                         <center>
-
                                                             <form action="{{route('Dashboard.User.Restore', $user->id)}}"
                                                                 method="post" id="formsendactive" name="formsendactive" onsubmit="activarUser(event, this)">
                                                                 @csrf
@@ -87,33 +81,25 @@
                                                                     <i class="fas fa-check"></i>
                                                                 </button>
                                                             </form>
-
                                                         </center>
                                                     </td>
-
                                                 </tr>
                                             @endforeach
-
                                         </tbody>
-
                                     </table>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
     </section>
 @endsection
 @section('script')
     <script>
         $('.dur').not('.alert-important').delay(3000).fadeOut(350);
-        
+
         function activarUser(event, form) {
             Swal.fire({
                 title: '¿Desea activar el usuario?',

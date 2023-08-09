@@ -55,14 +55,15 @@
                                         class="table table-bordered table-striped display nowrap table-hover js-basic-example dataTable">
                                         <thead class="thead-dark">
                                             <tr>
-                                                <th rowspan="2">#</th>
-                                                <th rowspan="2">Usuario</th>
-                                                <th rowspan="2">Email</th>
+                                                <th colspan="3">Informacion</th>
                                                 <th colspan="3">Gestión</th>
                                                 <th colspan="2">Módulos</th>
                                                 <th colspan="2">Submódulos</th>
                                             </tr>
                                             <tr>
+                                                <th>#</th>
+                                                <th>Usuario</th>
+                                                <th>Email</th>
                                                 <th>Password</th>
                                                 <th>Editar</th>
                                                 <th>Eliminar</th>
@@ -72,7 +73,7 @@
                                                 <th>Quitar</th>
                                             </tr>
                                         </thead>
-                                        
+
                                         <tbody>
 
                                             @foreach ($users as $user)
@@ -86,9 +87,9 @@
                                                         <td style="display: none;"></td>
                                                         <td style="display: none;"></td>
                                                         <td colspan="7" class="text-center">
-                                                            <a href="" class="btn btn-sm" 
+                                                            <a href="" class="btn btn-sm"
                                                                 style="background: slategray">
-                                                                <i class="fas fa-user-plus"></i>    
+                                                                <i class="fas fa-user-plus"></i>
                                                             </a>
                                                         </td>
                                                         <td style="display: none;"></td>
@@ -108,11 +109,11 @@
                                                         </td>
                                                         <td>
                                                             <form method="post" action="{{ route('Dashboard.User.Destroy', $user->id) }}" onsubmit="deleteData(event,this)">
-                                                                @csrf                                                            
+                                                                @csrf
                                                                 <button type="submit"
                                                                     class="btn btn-danger btn-sm"><i
                                                                     class="fas fa-trash text-red"></i></button>
-                                                            </form>                                                                
+                                                            </form>
                                                         </td>
                                                         <td>
                                                             <a href="{{ route('Dashboard.User.Show.Module', $user->id) }}"

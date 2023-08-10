@@ -25,7 +25,6 @@ class CreateEmployeesTable extends Migration
             $table->string('affiliation_date_arl')->nullable()->comment('fecha afiliacion arl');
             $table->string('photography')->nullable()->comment('fotografia del empleado');
             $table->unsignedBigInteger('person_id')->comment('Codigo persona relacion');
-            $table->unsignedBigInteger('area_id')->comment('Codigo Area relacion');
             $table->unsignedBigInteger('post_id')->comment('Codigo Cargo relacion');
             $table->unsignedBigInteger('rank_id')->comment('Codigo Rango de autoridad relacion');
             $table->unsignedBigInteger('arl_id')->comment('Codigo Arl relacion');
@@ -33,7 +32,6 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('pension_id')->comment('Codigo pension relacion');
             $table->unsignedBigInteger('enterprise_id')->comment('Codigo empresa relacion');
             $table->foreign('person_id')->references('id')->on('persons');
-            $table->foreign('area_id')->references('id')->on('areas')->onDelete('cascade');
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
             $table->foreign('rank_id')->references('id')->on('ranks')->onDelete('cascade');
             $table->foreign('arl_id')->references('id')->on('arls')->onDelete('cascade');

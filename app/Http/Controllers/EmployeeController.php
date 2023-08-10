@@ -67,10 +67,6 @@ class EmployeeController extends Controller
         $person->city_id = $request->city_id;
         $person->save();
 
-
-
-
-
         $employee = new Employee();
         $employee->civil_state = $request->civil_state;
         $employee->date_of_birth = $request->date_of_birth;
@@ -83,7 +79,6 @@ class EmployeeController extends Controller
             $employee->photography = $name_encrypt;
         }
         $employee->person_id = $person->id;
-        $employee->area_id = $request->area_id;
         $employee->post_id = $request->post_id;
         $employee->rank_id = $request->rank_id;
         $employee->arl_id = $request->arl_id;

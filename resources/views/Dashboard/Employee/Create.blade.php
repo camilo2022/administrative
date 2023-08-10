@@ -144,6 +144,33 @@
                                         </div>
 
                                         <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-float">
+                                                    <label for="">Eps</label>
+                                                    <select class="form-control show-tick ms select2 choices-remove-button"
+                                                        data-placeholder="Select" id="eps_id" name="eps_id">
+                                                        <option value="" selected disabled>Seleccionar</option>
+                                                        @foreach($epss as $eps)
+                                                            <option value="{{$eps->id}}">{{$eps->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group form-float">
+                                                    <label for="">Arl</label>
+                                                    <select class="form-control show-tick ms select2 choices-remove-button"
+                                                        data-placeholder="Select" id="arl_id" name="arl_id">
+                                                        <option value="" selected disabled>Seleccionar</option>
+                                                        @foreach($arls as $arl)
+                                                            <option value="{{$arl->id}}">{{$arl->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
                                             <div class="col-lg-4">
                                                 <div class="form-group form-float">
                                                     <label>Pais</label>
@@ -171,46 +198,6 @@
                                                     <select class="form-control show-tick ms select2 choices-remove-button"
                                                         data-placeholder="Select" id="city_id" name="city_id">
                                                         <option value="">Seleccionar</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="form-group form-float">
-                                                    <label for="">Eps</label>
-                                                    <select class="form-control show-tick ms select2 choices-remove-button"
-                                                        data-placeholder="Select" id="eps_id" name="eps_id">
-                                                        <option value="" selected disabled>Seleccionar</option>
-                                                        @foreach($epss as $eps)
-                                                            <option value="{{$eps->id}}">{{$eps->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="form-group form-float">
-                                                    <label for="">Arl</label>
-                                                    <select class="form-control show-tick ms select2 choices-remove-button"
-                                                        data-placeholder="Select" id="arl_id" name="arl_id">
-                                                        <option value="" selected disabled>Seleccionar</option>
-                                                        @foreach($arls as $arl)
-                                                            <option value="{{$arl->id}}">{{$arl->name}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="form-group form-float">
-                                                    <label>Estado civil</label>
-                                                    <select class="form-control show-tick ms select2 choices-remove-button"
-                                                        data-placeholder="Select" name="civil_state" id="civil_state">
-                                                        <option value="" selected disabled>Seleccionar</option>
-                                                        <option value="SOLTERO">SOLTERO</option>
-                                                        <option value="CASADO">CASADO</option>
-                                                        <option value="DIVORCIADO">DIVORCIADO</option>
-                                                        <option value="UNION LIBRE">UNION LIBRE</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -268,13 +255,14 @@
                                                         id="affiliation_date_eps">
                                                 </div>
                                                 <div class="form-group form-float">
-                                                    <label for="">Area</label>
+                                                    <label>Estado civil</label>
                                                     <select class="form-control show-tick ms select2 choices-remove-button"
-                                                        name="area_id" id="area_id" data-placeholder="Select">
+                                                        data-placeholder="Select" name="civil_state" id="civil_state">
                                                         <option value="" selected disabled>Seleccionar</option>
-                                                        @foreach($areas as $area)
-                                                            <option value="{{$area->id}}">{{$area->name}}</option>
-                                                        @endforeach
+                                                        <option value="SOLTERO">SOLTERO</option>
+                                                        <option value="CASADO">CASADO</option>
+                                                        <option value="DIVORCIADO">DIVORCIADO</option>
+                                                        <option value="UNION LIBRE">UNION LIBRE</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group form-float">
@@ -330,7 +318,7 @@
                                     <a href="{{ route('Dashboard.Employee.Index') }}" class="btn btn-secondary">Devolver</a>
                                     <button class="btn btn-primary" type="submit">Guardar</button>
                                 </form>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -354,7 +342,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="form-group form-float">
-                                                <input type="file" class="form-control dropify" 
+                                                <input type="file" class="form-control dropify"
                                                 name="photography" id="photography">
                                             </div>
                                         </div>
@@ -442,7 +430,6 @@ console.log(1)
             let arl_rate = $.trim($("#arl_rate").val());
             let affiliation_date_eps = $.trim($("#affiliation_date_eps").val());
             let affiliation_date_arl = $.trim($("#affiliation_date_arl").val());
-            let area_id = $.trim($("#area_id").val());
             let pension_id = $.trim($("#pension_id").val());
             let rank_id = $.trim($("#rank_id").val());
             let post_id = $.trim($("#post_id").val());
@@ -608,14 +595,6 @@ console.log(1)
                 Swal.fire({
                     title: 'Campo Vacio',
                     text: 'El Campo Fecha de afiliacion de la arl no puede estar vacio',
-                    type: 'warning'
-                })
-                return false;
-            } else if (area_id == "") {
-                Swal.fire({
-                    title: 'Campo Vacio',
-                    text: 'El Campo Seleccione Area no puede estar vacio',
-                    footer: 'Debe seleccionar un area',
                     type: 'warning'
                 })
                 return false;
